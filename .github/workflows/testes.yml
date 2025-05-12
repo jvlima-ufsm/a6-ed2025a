@@ -19,11 +19,9 @@ jobs:
       run: g++ -Wall -g -c catch_amalgamated.cpp
     - name: Compila testes
       run: g++ -Wall -g -c testes.cpp
-    - name: Compila lista
-      run: gcc -Wall -g -c lista.c
     - name: Compila ABB
       run: gcc -Wall -g -c abb.c
     - name: Programa final
-      run: g++ -Wall -g lista.o abb.o testes.o  catch_amalgamated.o
+      run: g++ -Wall -g abb.o testes.o  catch_amalgamated.o
     - name: Roda testes no valgrind
       run: valgrind --leak-check=full ./a.out --reporter compact --success
